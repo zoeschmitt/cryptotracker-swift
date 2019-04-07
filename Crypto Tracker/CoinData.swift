@@ -30,6 +30,17 @@ class CoinData {
         }
     }
     
+    func netWorthAsString() -> String {
+        
+        var netWorth = 0.0
+        
+        for coin in coins {
+            netWorth += coin.amount * coin.price
+        }
+        
+        return doubleToMoneyString(randomDouble: netWorth)
+    }
+    
     
     //this function gathers all cryptos and requests them from the api
     func getPrices() {
